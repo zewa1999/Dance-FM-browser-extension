@@ -1,0 +1,314 @@
+@font-face {
+  /* 1001 fonts - Um Sticks by Gem Fonts*/
+  font-family: 'UmSticks';
+  src: url('um_sticks-webfont.woff') format('woff'),
+       url('um_sticks-webfont.woff2') format('woff2');
+}
+
+/* Setting up animations */
+@keyframes slide-down {
+  0% {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes rotate-up {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes slide-up {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Main styles */
+body {
+  font-family: 'Arial','Helvetica Neue','Helvetica','sans-serif';
+}
+
+.title2 {
+  font-size: 26px;
+  font-family: 'UmSticks';
+  font-weight: normal;
+  margin: auto;
+  color: #f03c6c; /* pink */
+  padding-left: 16px;
+}
+header {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  min-width: 260px;
+  justify-content: space-around;
+  background-color: #e9bb35; /* yellow */
+}
+hr {
+  border: 1px solid #3f3185;
+  margin: 0;
+}
+.subtitle {
+  font-family: 'UmSticks';
+  font-size: 25px;
+  text-transform: lowercase;
+  margin: auto 0 auto;
+  font-weight: normal;
+  color: #41ab3d;   /* green */
+}
+
+/* Logo and icons */
+.player {
+  font-size: 50px;
+  color: #f03c6c; /* pink */
+  transition: 0.2s;
+}
+.player:hover {
+  color: #e84724;  /* red */
+}
+.logo {
+  display: block;
+  margin-right: auto;
+  max-width: 87%;
+}
+.fas {
+  cursor: pointer;
+}
+.fa-cog, .fa-angle-down, .fa-angle-up {
+  font-size: 22px;
+  padding: 10px;
+  color: #f03c6c; /* pink */
+}
+.fa-angle-down, .fa-angle-up {
+  color: #41ab3d;
+}
+.fa-cog {
+    font-size: 20px;
+    align-self: flex-start;
+    transition: 0.2s;
+}
+.fa-cog:hover {
+  color: #e84724;  /* red */
+}
+/* player info */
+.playerSection {
+  display: flex;
+  min-width: 260px;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 6px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 3px 0;
+}
+.currentSection {
+  display: flex;
+  flex-direction:column;
+  padding: 6px;
+}
+.artist {
+  font-weight: bold;
+}
+#cover {
+  max-width: 70px;
+}
+
+/* Recent played */
+#drawer {
+  display: flex;
+  min-width: 200px;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+.drawerIcon {
+  transition: 0.2s;
+  padding-top: 12px;
+}
+
+.loading {
+  padding: 6px 0;
+  margin: auto;
+  display: block;
+}
+#airedList li {
+  display: flex;
+  align-items: center;
+  padding: 4px 0;
+  animation: slide-down 0.4s ease;
+}
+.slideUp {
+  animation: slide-up 0.4s ease;
+}
+#airedList li img {
+  padding-right: 4px;
+}
+.open {
+  animation: rotate 0.5s ease;
+}
+.closed {
+  animation: rotate-up 0.5s ease;
+}
+.albumCover {
+  max-width: 60px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding-top: 3px;
+}
+.website {
+  text-decoration: none;
+  font-size: 13px;
+  font-family: inherit;
+  color: #f03c6c; /* pink */
+  padding: 1px;
+  transition: 0.2s;
+  border-bottom: 1px solid transparent;
+}
+.website:hover {
+  border-bottom: 1px solid #3f3185;
+}
+.socialmedia {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 5px;
+
+}
+.socialmedia .fab {
+  font-size: 16px;
+}
+.socialmedia a {
+  padding: 5px;
+  transition: 0.2s;
+  color: #f03c6c; /* pink */
+}
+.socialmedia a:hover {
+   color: #e84724;  /* red */
+}
+
+/* Specific styles to options */
+#optionsContainer {
+  display: flex;
+  min-width: 260px;
+  max-width: 900px;
+  margin: auto;
+  align-items: center;
+  flex-direction:column;
+}
+#optionsContainer a {
+  text-align: center;
+  padding-top: 10px;
+  color: #f03c6c; /* pink */
+  transition: 0.2s;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+#optionsContainer a:hover {
+  border-bottom:  1px solid  #f03c6c; /* pink */
+}
+.optionsTitle {
+  padding: 10px;
+}
+#status {
+  padding: 5px;
+}
+
+/* iOS style switches by Bandar Raffah
+https://codepen.io/BandarRaffah/pen/ibwje */
+
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+}
+.outerDiv {
+  display: inline-block;
+}
+form {
+  display: flex;
+  align-items: center;
+}
+
+/* Normal Track */
+input[type="checkbox"].ios-switch + div {
+  vertical-align: middle;
+  width: 40px;
+  height: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 999px;
+  background-color: rgba(0, 0, 0, 0.1);
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-property: background-color, box-shadow;
+  box-shadow: inset 0 0 0 0px rgba(0, 0, 0, 0.4);
+  margin: 15px 1em 15px 1em;
+  cursor: pointer;
+}
+
+/* Tiny Track */
+input[type="checkbox"].tinyswitch.ios-switch + div {
+	width: 34px;	height: 18px;
+}
+
+/* Green Track */
+input[type="checkbox"].green.ios-switch:checked + div {
+  background-color: #41ab3d;
+  border: 1px solid #2a4c37;
+  box-shadow: inset 0 0 0 10px #41ab3d;
+}
+
+/* Normal Knob */
+input[type="checkbox"].ios-switch + div > div {
+  float: left;
+  width: 18px;
+  height: 18px;
+  border-radius: inherit;
+  background: #ffffff;
+  -webkit-transition-timing-function: cubic-bezier(0.54, 1.85, 0.5, 1);
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-property: transform, background-color, box-shadow;
+  -moz-transition-timing-function: cubic-bezier(0.54, 1.85, 0.5, 1);
+  -moz-transition-duration: 0.4s;
+  -moz-transition-property: transform, background-color;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3), 0px 0px 0 1px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  margin-top: 1px;
+  margin-left: 1px;
+}
+
+/* Tiny Knob */
+input[type="checkbox"].tinyswitch.ios-switch + div > div {
+	width: 16px; height: 16px;
+	margin-top: 1px;
+}
+
+/* Green Knob */
+input[type="checkbox"].green.ios-switch:checked + div > div {
+  -webkit-transform: translate3d(20px, 0, 0);
+  -moz-transform: translate3d(20px, 0, 0);
+  background-color: #ffffff;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3), 0 0 0 1px #2a4c37;
+}
