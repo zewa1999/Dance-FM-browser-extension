@@ -102,21 +102,3 @@ drawer.addEventListener('mouseout', function transitionOff () {
   drawerIcon.style.color = '#41ab3d'
 })
 
-// Detecting the navigator language and changing title
-let userLang = navigator.language || navigator.userLanguage
-let title = document.querySelector('.title')
-let pt = /^pt/i
-let fr = /^fr/i
-let es = /^es/i
-let de = /^de/i
-if (pt.test(userLang)) {
-  title.innerText = 'música sem fronteiras'
-} else if (fr.test(userLang)) {
-  title.innerText = 'musique sans frontières'
-} else if (es.test(userLang)) {
-  title.innerText = 'música sin fronteras'
-} else if (de.test(userLang)) {
-  title.innerText = 'musik ohne grenzen'
-} else {
-  title.innerText = 'music without frontiers'
-};
